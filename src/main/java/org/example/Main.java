@@ -11,7 +11,7 @@ public class Main {
         while (Cal == true){
             System.out.println("--- Financial Calculator ---");
             System.out.println("1. mortgage Cal");
-            System.out.println("2. Future value Cal (compound interest");
+            System.out.println("2. Future value Cal (compound interest)");
             System.out.println("3. Present value of Annuity cal");
             System.out.println("0. Exit");
             System.out.println("");
@@ -26,8 +26,7 @@ public class Main {
 
                 double P = sc.nextDouble();
 
-                System.out.println("what is the Annual Interest Rate? " +
-                        "The nominal annual interest rate in decimal form. (e.g. 7.625% = 0.07625)");
+                System.out.println("what is the Annual Interest Rate? ");
                 double R = sc.nextDouble();
                 double r = (R / 12) / 100;
                 System.out.println("Loan Term in Years? (How many years the loan lasts.)");
@@ -43,10 +42,33 @@ public class Main {
                 System.out.println("type anything to return");
                 sc.nextLine();
                 String choice2 = sc.nextLine();
+
             } else if (choice.equals("0")) {
                 Cal = false;
 
             } else if (choice.equals("2")) {
+                System.out.println("You chose Future value Cal (compound interest)");
+                System.out.println("");
+                System.out.println("what is the initial deposit?)");
+
+                double P = sc.nextDouble();
+
+                System.out.println("what is the Annual Interest Rate? ");
+                double R = sc.nextDouble();
+                double r = R / 100;
+                System.out.println("the number of years the money will be invested for?)");
+                double N = sc.nextDouble();
+                double n = N;
+
+                double M = P * Math.pow((1 + r / 365), (365 * n));
+
+                System.out.println(M + " is the future value (FV) of the deposit");
+                double I = M - P;
+                System.out.println(I + " is the the total interest earned");
+
+                System.out.println("type anything to return");
+                sc.nextLine();
+                String choice2 = sc.nextLine();
 
             }
         }
