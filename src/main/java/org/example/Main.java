@@ -68,9 +68,34 @@ public class Main {
 
                 System.out.println("type anything to return");
                 sc.nextLine();
-                String choice2 = sc.nextLine();
+                String choice3 = sc.nextLine();
 
+            }else if(choice.equals("3")) {
+                System.out.println("You chose the Present value of Annuity Calculator!");
+                System.out.println("");
+                System.out.println("What is the monthly payout amount?)");
+
+                double P = sc.nextDouble();
+
+                System.out.println("what is the Annual Interest Rate? ");
+                double R = sc.nextDouble();
+                double r = (R / 12) / 100;
+                System.out.println("number of years to pay out?)");
+                double N = sc.nextDouble();
+                double n = N * 12;
+
+                double M = P * ((1 - (Math.pow((1 + r), (-n)))) / r);
+
+                System.out.println("the present value (PV) of the annuity is " + M);
+
+                System.out.println("type anything to return");
+                sc.nextLine();
+                String choice3 = sc.nextLine();
+            }else{
+                System.out.println("invalid input");
+                Cal = false;
             }
+
         }
 
     }
